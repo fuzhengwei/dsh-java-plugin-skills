@@ -4,7 +4,7 @@ description: 辅助用户快速完成 deepseek-harness-java（DSH Java，Java Ag
 license: Apache-2.0
 metadata:
   author: xfg-studio
-  version: "1.10.0"
+  version: "1.11.0"
   category: agent-plugin
   homepage: https://github.com/fuzhengwei/deepseek-harness
 ---
@@ -173,8 +173,9 @@ bash <skill_path>/scripts/smoke_test.sh
 - DSH 未配置模型时对话报错，先检查「设置 → 模型设置」
 - 端口约定：DSH 8090；案例应用 18080（商城）/ 8091（MySQL 平台），新应用避开这些端口
 - 新应用前端必须先读 `references/ui-design-guide.md` 并按其自检"AI 味清单"，出现 AI 味信号（默认蓝紫渐变/emoji 图标/裸表格/无 hover 过渡）即为不合格
-- **禁止千篇一律的 UI**：每类场景必须用专属设计语言（ui-design-guide.md 1.5 分域设计语言表）——写码前先产出「设计语言卡」（主色/背景材质/形状母题/标志性元素/气质关键词 3 个）；同板块案例与库内已有应用对比，辅助色/材质/布局至少两项不同；页面要有贯穿全页的标志性视觉母题，AI 面板配色跟随领域风格。打开页面 3 秒说不出"这是哪类产品"即为不合格
+- **禁止千篇一律的 UI**：每类场景必须用专属设计语言（ui-design-guide.md 1.5 分域设计语言表）——写码前先产出「设计语言卡」（主色/背景材质/形状母题/标志性元素/气质关键词 3 个）；**并按硬规则 5 与库内最邻近 2~3 个案例逐一对比**（同板块优先，其次邻近板块），差异点（辅助色/材质/布局/母题至少两项）写进设计语言卡并随 README 交付；页面要有贯穿全页的标志性视觉母题，AI 面板配色跟随领域风格。打开页面 3 秒说不出"这是哪类产品"，或"换个主色就是新应用"，均为不合格
 - **AI 气泡禁止 `textContent` 裸显模型回复**：模型输出是 markdown（`**加粗**`/`- 列表`/`###`），必须用 `renderMd` 渲染（代码见 ui-design-guide.md 第五节），流式期间逐 chunk 实时 `innerHTML` 重渲染；先 `escapeHtml` 防 XSS，用户气泡保持 `textContent`。交付清单 UI 层有对应检查项
+- **视觉/拍照类场景（P100~P104）必须按「视觉场景实现规范」实现**（prompt-recipes.md 视觉智能节末）：图像走"上传→image_id→工具入参"链路，工具 schema 禁止 base64；识别走预置样张库（默认）或应用侧视觉模型 API（增强），识别结果必须带置信度；卡路里/估价等数值一律来自预置库 × 分量，禁止 AI 现编；页面固定位置展示免责声明（估算仅供参考/民俗观点仅供娱乐/以线下定损为准）
 - **视觉/拍照类场景（P100~P104）必须按「视觉场景实现规范」实现**（prompt-recipes.md 视觉智能节末）：图像走"上传→image_id→工具入参"链路，工具 schema 禁止 base64；识别走预置样张库（默认）或应用侧视觉模型 API（增强），识别结果必须带置信度；卡路里/估价等数值一律来自预置库 × 分量，禁止 AI 现编；页面固定位置展示免责声明（估算仅供参考/民俗观点仅供娱乐/以线下定损为准）
 
 ### 运行环境坑位（沙箱/受限代理环境必看，详见 runtime-pitfalls.md）

@@ -50,7 +50,7 @@ AI Agent 技能包：帮助你**快速完成 deepseek-harness-java（DSH，Java 
 | **仅独立应用** | 只生成 `xxx-app`，功能照常能用，与 DSH 无关 | 只要业务系统本身 |
 | **先设计 + 原型** | 实体表、工具清单、页面原型，确认后再开发 | 想先对齐方向 |
 
-### 99 个开箱即用案例（覆盖 48 个领域分类）
+### 104 个开箱即用案例（覆盖 49 个领域分类）
 
 对助手说一句案例编号或名称（如「就做 P23」），即可一句话完成开发、部署、启动：
 
@@ -94,6 +94,9 @@ AI Agent 技能包：帮助你**快速完成 deepseek-harness-java（DSH，Java 
                                           更多角色   P89 导游 · P90 房东 · P91 营养师 · P92 自由职业
                                                      P93 电竞复盘 · P94 琴行 · P95 宠物寄养 · P96 装修
                                                      P97 团购团长 · P98 图书馆 · P99 摄影约拍
+                                                     ── 视觉智能（拍照即用）──
+                                          拍照识别   P100 拍照卡路里 · P101 风水点评 · P102 识花绿植
+                                                     P103 小票记账 · P104 车损估价
 ```
 
 **精选案例长什么样**（每个应用 = 业务主界面 + 右下角 AI 助手面板 + 3~6 个 Agent 工具）：
@@ -170,7 +173,7 @@ dsh-java-plugin-skills/
 └── references/                       # 参考文档（渐进式披露，按需加载）
     ├── plugin-dev-guide.md           # 插件开发全流程（含完整代码骨架，从真实案例提炼）
     ├── ui-design-guide.md            # UI 设计指南（design tokens、分域设计语言表、无 AI 味清单、AI 面板规范、md 渲染）
-    ├── prompt-recipes.md             # 99 案例储备库 + 场景深挖卡片 + 细腻度规范
+    ├── prompt-recipes.md             # 104 案例储备库（含视觉智能拍照识别类）+ 场景深挖卡片 + 细腻度规范
     ├── runtime-pitfalls.md           # 运行环境坑位与端到端验证指南
     ├── delivery-checklist.md         # 最终交付清单（自动化项 + 手工项 + 回归矩阵）
     ├── readme-delivery-template.md   # README 交付模板 + 简历项目模板
